@@ -24,9 +24,8 @@ def input_to_index(user_input)
    user_input.to_i - 1
 end
 
-def move(board, index_i, token)
+def move(board, index_i, token = "X")
   board[index_i] = token 
-  play(board)
 end
 
 def turn(board) 
@@ -36,7 +35,7 @@ def turn(board)
   valid_move?(board, index)
   if valid_move?(board,index)
     puts "valid move"
-    move(board, index, token)
+    move(board, index, token = "X")
     display_board(board)
    else
     puts "try again"
